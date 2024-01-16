@@ -1,0 +1,7 @@
+[
+null,
+{"id":1,"list":[{"code":105,"indent":0,"parameters":[1,true]},{"code":405,"indent":0,"parameters":["Титры"]},{"code":405,"indent":0,"parameters":["Программист: Dalk12 (Даниил)"]},{"code":405,"indent":0,"parameters":["Sound-дизайнер: Dalk12 (Даниил)"]},{"code":405,"indent":0,"parameters":["Автор идеи: Dalk12 (Даниил) и Rokozor (Руслан)"]},{"code":405,"indent":0,"parameters":["Дизайнер: Dalk12 (Даниил)"]},{"code":405,"indent":0,"parameters":["Тестировщик: Rokozor (Руслан)"]},{"code":0,"indent":0,"parameters":[]}],"name":"Финалочка","switchId":14,"trigger":0},
+{"id":2,"list":[{"code":101,"indent":0,"parameters":["",0,0,2]},{"code":401,"indent":0,"parameters":["Наносинтол деформирует ваше тело..."]},{"code":101,"indent":0,"parameters":["",0,0,2]},{"code":401,"indent":0,"parameters":["Вы уже не человек..."]},{"code":101,"indent":0,"parameters":["",0,0,2]},{"code":401,"indent":0,"parameters":["Вы зверь, нахуй!"]},{"code":101,"indent":0,"parameters":["",0,0,2]},{"code":401,"indent":0,"parameters":["Дитя синтола, обретшее невероятную силу ценой физи-"]},{"code":401,"indent":0,"parameters":["ческого уродства..."]},{"code":0,"indent":0,"parameters":[]}],"name":"Сила синтола","switchId":4,"trigger":1},
+{"id":3,"list":[{"code":315,"indent":0,"parameters":[0,0,0,0,1000,false]},{"code":0,"indent":0,"parameters":[]}],"name":"Книга опыта","switchId":1,"trigger":0},
+{"id":4,"list":[{"code":0,"indent":0,"parameters":[]}],"name":"","switchId":1,"trigger":0}
+]
