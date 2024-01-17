@@ -1,7 +1,0 @@
-[
-null,
-{"id":1,"battlerName":"Zavgorodny","characterIndex":0,"characterName":"Zavgorodny","classId":1,"equips":[1,1,0,0,0],"faceIndex":0,"faceName":"Zavgorodny","traits":[],"initialLevel":1,"maxLevel":99,"name":"Андрей","nickname":"Лысый из доты","note":"","profile":"Герой, который всю жизнь качался и тренировался чтобы\nспасти мир"},
-{"id":2,"battlerName":"Глеб","characterIndex":0,"characterName":"Глеб","classId":5,"equips":[3,0,0,0,0],"faceIndex":0,"faceName":"Глеб","traits":[],"initialLevel":4,"maxLevel":99,"name":"Глеб","nickname":"Антимаг","note":"","profile":"Cтароста деревни и просто хороший крип"},
-{"id":3,"battlerName":"","characterIndex":0,"characterName":"Белуга","classId":3,"equips":[6,0,0,0,0],"faceIndex":0,"faceName":"Белуга","traits":[],"initialLevel":10,"maxLevel":99,"name":"Белуга","nickname":"Еулуга","note":"","profile":"Клоун-обезьяна-дота-помойщик-поломойщик"},
-{"id":4,"battlerName":"","characterIndex":0,"characterName":"руслан","classId":7,"equips":[8,6,2,5,9,16,17],"faceIndex":0,"faceName":"Русланиус","traits":[],"initialLevel":30,"maxLevel":99,"name":"Русланиус","nickname":"Архидушный","note":"","profile":"Первый душнила во всём королевстве и прислужник Короля"}
-]
