@@ -2,7 +2,7 @@
 null,
 {"id":1,"expanded":true,"name":"start_location","order":5,"parentId":0,"scrollX":2658.6666666666665,"scrollY":604},
 {"id":2,"expanded":true,"name":"low_priority","order":1,"parentId":0,"scrollX":1846.6666666666667,"scrollY":604},
-{"id":3,"expanded":true,"name":"big_forest","order":2,"parentId":0,"scrollX":2253.3333333333335,"scrollY":1302.6666666666667},
+{"id":3,"expanded":true,"name":"big_forest","order":2,"parentId":0,"scrollX":2232,"scrollY":1281.3333333333333},
 {"id":4,"expanded":true,"name":"castle_interior","order":3,"parentId":0,"scrollX":973.1999999999999,"scrollY":553.1999999999999},
 {"id":5,"expanded":false,"name":"boss_rush","order":4,"parentId":0,"scrollX":1092,"scrollY":604},
 {"id":6,"expanded":true,"name":"Bunker","order":6,"parentId":0,"scrollX":1092,"scrollY":614.6666666666666},
