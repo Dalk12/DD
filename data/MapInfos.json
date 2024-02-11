@@ -1,19 +1,10 @@
 [
 null,
-<<<<<<< HEAD
-{"id":1,"expanded":true,"name":"start_location","order":5,"parentId":0,"scrollX":982.8,"scrollY":543.6},
-{"id":2,"expanded":true,"name":"low_priority","order":1,"parentId":0,"scrollX":999.5999999999999,"scrollY":543.6},
-{"id":3,"expanded":true,"name":"big_forest","order":2,"parentId":0,"scrollX":999.5999999999999,"scrollY":1556.3999999999999},
-{"id":4,"expanded":true,"name":"castle_interior","order":3,"parentId":0,"scrollX":973.1999999999999,"scrollY":2326.7999999999997},
-{"id":5,"expanded":false,"name":"boss_rush","order":4,"parentId":0,"scrollX":982.8,"scrollY":543.6},
-{"id":6,"expanded":true,"name":"Bunker","order":6,"parentId":0,"scrollX":982.8,"scrollY":543.6},
-=======
-{"id":1,"expanded":true,"name":"start_location","order":5,"parentId":0,"scrollX":1089.3333333333333,"scrollY":596.6666666666666},
-{"id":2,"expanded":true,"name":"low_priority","order":1,"parentId":0,"scrollX":1089.3333333333333,"scrollY":596.6666666666666},
-{"id":3,"expanded":true,"name":"big_forest","order":2,"parentId":0,"scrollX":2713.3333333333335,"scrollY":1682},
-{"id":4,"expanded":true,"name":"castle_interior","order":3,"parentId":0,"scrollX":1078.6666666666667,"scrollY":1792.6666666666667},
+{"id":1,"expanded":true,"name":"start_location","order":5,"parentId":0,"scrollX":2562.6666666666665,"scrollY":596.6666666666666},
+{"id":2,"expanded":true,"name":"low_priority","order":1,"parentId":0,"scrollX":3708,"scrollY":596.6666666666666},
+{"id":3,"expanded":true,"name":"big_forest","order":2,"parentId":0,"scrollX":2562.6666666666665,"scrollY":967.3333333333334},
+{"id":4,"expanded":true,"name":"castle_interior","order":3,"parentId":0,"scrollX":1078.6666666666667,"scrollY":967.3333333333334},
 {"id":5,"expanded":false,"name":"boss_rush","order":4,"parentId":0,"scrollX":1089.3333333333333,"scrollY":596.6666666666666},
 {"id":6,"expanded":true,"name":"Bunker","order":6,"parentId":0,"scrollX":1089.3333333333333,"scrollY":607.3333333333334},
->>>>>>> parent of 3e2d85b (финалочка)
-{"id":7,"expanded":false,"name":"fah_dimension","order":7,"parentId":0,"scrollX":4585.2,"scrollY":543.6}
+{"id":7,"expanded":false,"name":"fah_dimension","order":7,"parentId":0,"scrollX":1089.3333333333333,"scrollY":596.6666666666666}
 ]
