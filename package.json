@@ -1,12 +1,12 @@
 {
-    "name": "",
+    "name": "rmmz-game",
     "main": "index.html",
-    "js-flags": "--expose-gc",
+    "chromium-args": "--force-color-profile=srgb",
     "window": {
-        "title": "",
-        "toolbar": false,
-        "width": 816,
-        "height": 624,
+        "title": "Дорога Дотера",
+        "width": 1024,
+        "height": 1926,
+        "position": "center",
         "icon": "icon/icon.png"
     }
 }
