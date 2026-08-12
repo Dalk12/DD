@@ -6,5 +6,6 @@ var $plugins =
 {"name":"RandomSplash","status":true,"description":"Показывает случайную картинку из img/splash вместо Made with MV.","parameters":{"Fade In Time":"60","Wait Time":"120","Fade Out Time":"60","Fallback Images":""}},
 {"name":"PSV","status":true,"description":"Просмотр эффектов партии в бою (v12). R / кнопка \"Эффекты\".","parameters":{}},
 {"name":"EnemyHPViewer","status":true,"description":"Полоса HP под ВИДИМОЙ частью изображения врага + мелкие цифры.","parameters":{"Bar Width":"100","Y Offset":"0"}},
-{"name":"DotaQuiz","status":true,"description":"Викторина по Dota 2: 155 вопросов, 10 за игру, таймер 15 сек.","parameters":{"Questions Per Game":"10","Time Limit":"15","Gold Correct":"50","Gold Wrong":"300","Currency Name":"ММР","Result Variable ID":"30"}}
+{"name":"DotaQuiz","status":true,"description":"Викторина по Dota 2: 155 вопросов, 10 за игру, таймер 15 сек.","parameters":{"Questions Per Game":"10","Time Limit":"15","Gold Correct":"50","Gold Wrong":"300","Currency Name":"ММР","Result Variable ID":"30"}},
+{"name":"PlayAnim","status":true,"description":"Вызов анимаций по ID на врагов или членов партии (Plugin Command).","parameters":{}}
 ];
