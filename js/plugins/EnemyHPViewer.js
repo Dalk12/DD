@@ -1,29 +1,53 @@
 //=============================================================================
-// EnemyHPViewer.js v6
+// EnemyHPViewer.js v7
 //=============================================================================
 /*:
- * @plugindesc Полосы HP/брони под врагами + команды управления EHP.
+ * @plugindesc Полосы HP/брони под врагами (с порогами) + команды управления EHP.
  * @author Assistant
  *
- * @param Bar Width
+ * @param HP Threshold
+ * @desc Показывать HP бар если HP врага > этого значения
+ * @default 0
+ *
+ * @param HP Bar Width
  * @desc Ширина полосы HP по умолчанию
  * @default 140
  *
+ * @param HP Bar Color
+ * @desc Цвет полосы HP по умолчанию (hex: #rrggbb)
+ * @default #4caf50
+ *
  * @param Y Offset
  * @desc Вертикальное смещение по умолчанию
+ * @default 0
+ *
+ * @param Armor Threshold
+ * @desc Показывать полосу брони если значение > этого
  * @default 0
  *
  * @param Armor Max
  * @desc Значение брони, считаемое полной полосой
  * @default 200
  *
+ * @param Armor Bar Color
+ * @desc Цвет полосы брони по умолчанию
+ * @default #d0d0d0
+ *
+ * @param Magic Armor Threshold
+ * @desc Показывать полосу маг. брони если значение > этого
+ * @default 0
+ *
  * @param Magic Armor Max
  * @desc Значение маг. брони, считаемое полной полосой
  * @default 200
  *
+ * @param Magic Armor Bar Color
+ * @desc Цвет полосы маг. брони по умолчанию
+ * @default #7f7fff
+ *
  * @help
- * Полоса HP висит под видимым низом врага и исчезает после смерти.
- * Полоски брони (Ф) и маг. брони (М) выключены по умолчанию.
+ * Полосы показываются только если значение > порога (настраивается).
+ * Полоса HP исчезает после смерти врага.
  *
  * === КОМАНДЫ (Plugin Command) ===
  * Номер врага = позиция в отряде (1..8). 0 = все враги.
@@ -49,17 +73,24 @@
 (function () {
     'use strict';
 
-    console.log('>>> EnemyHPViewer v6 LOADED');
+    console.log('>>> EnemyHPViewer v7 LOADED');
 
     var params = PluginManager.parameters('EnemyHPViewer');
-    var BAR_W = Number(params['Bar Width'] || 140);
+    var HP_THRESHOLD = Number(params['HP Threshold'] || 0);
+    var BAR_W = Number(params['HP Bar Width'] || 140);
+    var HP_COLOR = String(params['HP Bar Color'] || '#4caf50');
     var Y_OFFSET = Number(params['Y Offset'] || 0);
+    var ARMOR_THRESHOLD = Number(params['Armor Threshold'] || 0);
     var ARMOR_MAX = Number(params['Armor Max'] || 200);
+    var MARMOR_THRESHOLD = Number(params['Magic Armor Threshold'] || 0);
     var MARMOR_MAX = Number(params['Magic Armor Max'] || 200);
     var BAR_H = 5;
 
     var MASTER_ON = true;
-    var COLORS = { armor: '#d0d0d0', marmor: '#7f7fff' };
+    var COLORS = { 
+        armor: String(params['Armor Bar Color'] || '#d0d0d0'), 
+        marmor: String(params['Magic Armor Bar Color'] || '#7f7fff') 
+    };
     var SETTINGS = {};
 
     function cfgFor(idx) {
@@ -229,6 +260,17 @@
         this._ehpSprite.visible = show;
         if (!show) return;
 
+        // Проверяем пороги
+        var showHP = e.hp > HP_THRESHOLD;
+        var showArmor = cfg.armor && e.def > ARMOR_THRESHOLD;
+        var showMarmor = cfg.marmor && e.mdf > MARMOR_THRESHOLD;
+        
+        // Если ничего не показывать, скрываем спрайт
+        if (!showHP && !showArmor && !showMarmor) {
+            this._ehpSprite.visible = false;
+            return;
+        }
+
         var bmpW = barW + 90;
         var bmpH = barH + 40;
         if (this._ehpBmpW !== bmpW || this._ehpBmpH !== bmpH) {
@@ -248,23 +290,33 @@
         bar.clear();
 
         var x0 = (bmpW - barW) / 2;
-        var rate = e.mhp > 0 ? Math.max(0, e.hp / e.mhp) : 0;
-
-        // HP
-        bar.fillRect(x0, 0, barW, barH, '#333333');
-        if (rate > 0) {
-            var color = cfg.color ||
-                (rate > 0.5 ? '#4caf50' : (rate > 0.25 ? '#ff9800' : '#f44336'));
-            bar.fillRect(x0, 0, Math.floor(barW * rate), barH, color);
-        }
-        bar.fontSize = 12;
-        bar.textColor = '#ffffff';
-        bar.drawText(e.hp + '/' + e.mhp, 0, barH + 2, bmpW, 16, 'center');
-
-        // Броня и маг. броня
         var ay = barH + 22;
-        if (cfg.armor)  drawStatBar(bar, e.def, ARMOR_MAX, COLORS.armor,  'Ф', x0, barW, ay);
-        if (cfg.marmor) drawStatBar(bar, e.mdf, MARMOR_MAX, COLORS.marmor, 'М', x0, barW, ay + 9);
+        var currentY = 0;
+
+        // HP (если выше порога)
+        if (showHP) {
+            var rate = e.mhp > 0 ? Math.max(0, e.hp / e.mhp) : 0;
+            bar.fillRect(x0, currentY, barW, barH, '#333333');
+            if (rate > 0) {
+                var color = cfg.color || HP_COLOR;
+                bar.fillRect(x0, currentY, Math.floor(barW * rate), barH, color);
+            }
+            bar.fontSize = 12;
+            bar.textColor = '#ffffff';
+            bar.drawText(e.hp + '/' + e.mhp, 0, currentY + barH + 2, bmpW, 16, 'center');
+            currentY += barH + 20;
+        }
+
+        // Броня (если включена и выше порога)
+        if (showArmor) {
+            drawStatBar(bar, e.def, ARMOR_MAX, COLORS.armor, 'Ф', x0, barW, currentY);
+            currentY += 9;
+        }
+
+        // Маг. броня (если включена и выше порога)
+        if (showMarmor) {
+            drawStatBar(bar, e.mdf, MARMOR_MAX, COLORS.marmor, 'М', x0, barW, currentY);
+        }
     };
 
 })();
