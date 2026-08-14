@@ -3,9 +3,11 @@
 var $plugins =
 [
 {"name":"TransformEnemyByState","status":true,"description":"Временно превращает врага в другого врага через состояние.","parameters":{}},
+{"name":"HelpWindowPlus","status":true,"description":"Увеличивает окно описания до N строк + автоперенос текста.","parameters":{"Lines":"4","Word Wrap":"true"}},
 {"name":"RandomSplash","status":true,"description":"Показывает случайную картинку из img/splash вместо Made with MV.","parameters":{"Fade In Time":"60","Wait Time":"120","Fade Out Time":"60","Fallback Images":""}},
 {"name":"PSV","status":true,"description":"Просмотр эффектов партии в бою (v12). R / кнопка \"Эффекты\".","parameters":{}},
 {"name":"EnemyHPViewer","status":true,"description":"Полосы HP/брони под врагами (с порогами) + команды управления EHP.","parameters":{"HP Threshold":"200000","HP Bar Width":"1000","HP Bar Color":"#4caf50","Y Offset":"0","Armor Threshold":"100","Armor Max":"300","Armor Bar Color":"#d0d0d0","Magic Armor Threshold":"100","Magic Armor Max":"300","Magic Armor Bar Color":"#7f7fff"}},
 {"name":"DotaQuiz","status":true,"description":"Викторина по Dota 2: 155 вопросов, 10 за игру, таймер 15 сек.","parameters":{"Questions Per Game":"10","Time Limit":"15","Gold Correct":"50","Gold Wrong":"300","Currency Name":"ММР","Result Variable ID":"30"}},
-{"name":"PlayAnim","status":true,"description":"Вызов анимаций по ID на врагов или членов партии (Plugin Command).","parameters":{}}
+{"name":"PlayAnim","status":true,"description":"Вызов анимаций по ID на врагов или членов партии (Plugin Command).","parameters":{}},
+{"name":"YEP_MessageCore","status":false,"description":"v1.19 Adds more features to the Message Window to customized\nthe way your messages appear and functions.","parameters":{"---General---":"","Default Rows":"4","Default Width":"Graphics.boxWidth","Face Indent":"Window_Base._faceWidth + 24","Fast Forward Key":"pagedown","Enable Fast Forward":"true","Word Wrapping":"true","Description Wrap":"true","Word Wrap Space":"true","Tight Wrap":"false","---Font---":"","Font Name":"GameFont","Font Name CH":"SimHei, Heiti TC, sans-serif","Font Name KR":"Dotum, AppleGothic, sans-serif","Font Size":"28","Font Size Change":"12","Font Changed Max":"96","Font Changed Min":"12","Font Outline":"4","Maintain Font":"false","---Name Box---":"","Name Box Buffer X":"-28","Name Box Buffer Y":"0","Name Box Padding":"this.standardPadding() * 4","Name Box Color":"0","Name Box Clear":"false","Name Box Added Text":"\\c[6]","Name Box Auto Close":"false"}}
 ];
